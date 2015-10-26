@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
      event.addEventListener ('click', function(){
        document.getElementById('output').value += event.value;
 
+
      });
    };
   function clear (event){
@@ -11,25 +12,13 @@ document.addEventListener("DOMContentLoaded", function(event) {
       document.getElementById('output').value = "";
     });
   };
+
+
   function calculateThis (event){
     event.addEventListener ('click', function (){
       tingle = document.getElementById('output').value;
-      jiggle = tingle.split("");
-      a = Number(jiggle[0]);
-      b = Number(jiggle[2]);
-
-      if (jiggle[1] === "+") {
-        x = a + b;
-      } else if (jiggle[1] === "-") {
-        x = a - b;
-      }
-        else if (jiggle[1] === "/") {
-          x = a / b;
-      } else if (jiggle[1] === "X") {
-          x = a * b;
-      } else {
-        x = "ERROR";
-      };
+      x = eval(tingle);
+    
       document.getElementById('output').value = x;
 
     });
